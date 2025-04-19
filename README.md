@@ -37,22 +37,24 @@ Your backend must expose the following endpoints:
 
 ```
 /app
-  ├── components/
-  ├── screens/
-  ├── utils/
-  ├── assets/
-  └── App.js
+  ├── components/     # Reusable UI components
+  ├── screens/        # Screen components
+  ├── utils/          # Utility functions
+  ├── assets/         # Static assets
+  ├── config/         # Configuration files
+  └── App.js          # Main application entry
 ```
 
-## 🌐 Community & Contributions
+## 🎨 Branding
 
-Have a feature request or model idea? Open a pull request or start a discussion!
+The app's branding can be easily customized by modifying the `config/branding.js` file:
 
-## 📄 License
-
-MIT License © 2024 [Anis]
-
----
+```javascript
+export const BRANDING = {
+  title: 'Assistive AI',
+  subtitle: 'Take a picture or choose from gallery',
+};
+```
 
 ## 📋 Prerequisites
 
@@ -84,7 +86,9 @@ pnpm install
 pnpm expo start
 ```
 
-## 📱 Running the App
+## 📱 Development
+
+### Running the App
 
 After starting the app, you'll see the Expo development server interface with the following options:
 
@@ -122,14 +126,50 @@ After starting the app, you'll see the Expo development server interface with th
 2. Scan the QR code with Expo Go app
 
 ### Development Tools
-- Use `i` to open iOS simulator (requires Xcode)
-- Use `a` to open Android emulator (requires Android Studio)
-- Use `w` to open web version
-- Use `r` to reload the app
-- Use `j` to open the debugger
-- Use `m` to toggle the developer menu
+
+| Command | Description |
+|---------|-------------|
+| `i` | Open iOS simulator (requires Xcode) |
+| `a` | Open Android emulator (requires Android Studio) |
+| `w` | Open web version |
+| `r` | Reload the app |
+| `j` | Open the debugger |
+| `m` | Toggle the developer menu |
 
 ### Troubleshooting
-- Make sure your mobile device and computer are on the same network
-- For iOS, ensure you're signed in to your Apple ID in Xcode
-- For Android, ensure you have an emulator set up in Android Studio
+
+#### Common Issues
+
+1. **Port Already in Use**
+   ```bash
+   # Kill the process using port 8081
+   kill $(lsof -t -i:8081) 2>/dev/null || true
+   ```
+
+2. **Watchman Warning**
+   ```bash
+   watchman watch-del '/path/to/project' ; watchman watch-project '/path/to/project'
+   ```
+
+3. **Network Issues**
+   - Ensure your mobile device and computer are on the same network
+   - Check if your firewall is blocking the connection
+   - Try using a different port with `expo start --port 19000`
+
+4. **iOS Specific**
+   - Ensure you're signed in to your Apple ID in Xcode
+   - Check if your device is trusted in Xcode
+   - Verify that the development team is selected in Xcode
+
+5. **Android Specific**
+   - Ensure you have an emulator set up in Android Studio
+   - Check if USB debugging is enabled on your device
+   - Verify that the correct Android SDK is installed
+
+## 🌐 Community & Contributions
+
+Have a feature request or model idea? Open a pull request or start a discussion!
+
+## 📄 License
+
+MIT License © 2024 [Anis]

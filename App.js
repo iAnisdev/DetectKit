@@ -5,6 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import * as Speech from 'expo-speech';
 import CameraPicker from './components/CameraPicker';
 import GalleryPicker from './components/GalleryPicker';
+import { BRANDING } from './config/branding';
 
 export default function App() {
   const [image, setImage] = useState(null);
@@ -86,8 +87,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Assistive AI</Text>
-      <Text style={styles.subtitle}>Take a picture or choose from gallery</Text>
+      <Text style={styles.title}>{BRANDING.title}</Text>
+      <Text style={styles.subtitle}>{BRANDING.subtitle}</Text>
       
       {image && (
         <View style={styles.imageContainer}>
@@ -135,6 +136,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
+  header: {
+    marginBottom: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -143,8 +150,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: '#666',
-    marginBottom: 30,
-  },
+    marginBottom: 30,  },
   imageContainer: {
     position: 'relative',
     marginBottom: 20,
