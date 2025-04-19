@@ -15,6 +15,18 @@
 
 ---
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="screenshots/intro.png" alt="Home Screen" width="200" />
+  <img src="screenshots/picker.png" alt="Camera Screen" width="200" />
+  <img src="screenshots/result.png" alt="Results Screen" width="200" />
+</div>
+
+*Note: Add your screenshots to the `screenshots` directory*
+
+---
+
 ## 🔧 Backend API Contract
 
 Your backend must expose the following endpoints:
@@ -36,13 +48,14 @@ Your backend must expose the following endpoints:
 ## 📁 Project Structure
 
 ```
-/app
-  ├── components/     # Reusable UI components
-  ├── screens/        # Screen components
-  ├── utils/          # Utility functions
-  ├── assets/         # Static assets
-  ├── config/         # Configuration files
-  └── App.js          # Main application entry
+/
+├── components/     # Reusable UI components
+├── screens/        # Screen components
+├── utils/          # Utility functions
+├── assets/         # Static assets
+├── config/         # Configuration files
+├── screenshots/    # App screenshots
+└── App.js          # Main application entry
 ```
 
 ## 🎨 Branding
