@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Alert, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const CameraPicker = ({ onImageSelected }) => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -65,7 +66,15 @@ const CameraPicker = ({ onImageSelected }) => {
       onPress={takePhoto}
       disabled={buttonDisabled}
     >
-      <Text style={styles.buttonText}>{buttonText}</Text>
+      <View style={styles.buttonContent}>
+        <MaterialIcons 
+          name="camera-alt" 
+          size={24} 
+          color="white" 
+          style={buttonDisabled && styles.iconDisabled} 
+        />
+        <Text style={styles.buttonText}>{buttonText}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -76,16 +85,24 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     width: '80%',
-    alignItems: 'center',
     marginVertical: 10,
+  },
+  buttonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonDisabled: {
     backgroundColor: '#999',
+  },
+  iconDisabled: {
+    opacity: 0.5,
   },
   buttonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+    marginLeft: 8,
   },
 });
 

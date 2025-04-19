@@ -1,6 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Alert, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const GalleryPicker = ({ onImageSelected }) => {
   const pickImage = async () => {
@@ -39,7 +40,10 @@ const GalleryPicker = ({ onImageSelected }) => {
       style={styles.button}
       onPress={pickImage}
     >
-      <Text style={styles.buttonText}>Gallery</Text>
+      <View style={styles.buttonContent}>
+        <MaterialIcons name="photo-library" size={24} color="white" />
+        <Text style={styles.buttonText}>Gallery</Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -50,13 +54,18 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     width: '80%',
-    alignItems: 'center',
     marginVertical: 10,
+  },
+  buttonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+    marginLeft: 8,
   },
 });
 
