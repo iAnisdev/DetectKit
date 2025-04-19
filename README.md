@@ -85,6 +85,32 @@ pnpm --version
 npx expo --version
 ```
 
+## 🔐 Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```bash
+# Required: Your backend API URL
+EXPO_PUBLIC_API_URL=http://localhost:3000  # Replace with your actual API URL
+```
+
+Example values for different environments:
+
+```bash
+# Development
+EXPO_PUBLIC_API_URL=http://localhost:3000
+
+# Production
+EXPO_PUBLIC_API_URL=https://api.yourdomain.com
+
+# Using ngrok tunnel
+EXPO_PUBLIC_API_URL=https://your-tunnel.ngrok.io
+```
+
+The app will use this URL to:
+- Check server health at `${EXPO_PUBLIC_API_URL}/health`
+- Upload images at `${EXPO_PUBLIC_API_URL}/upload`
+
 ## 🚀 Quick Start
 
 ```bash
